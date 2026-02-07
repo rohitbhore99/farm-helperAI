@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  FARM HELPER AI - Farmer-Friendly Design System
+  Inspired by nature, soil, crops, and harvest
+  Colors: Earthy greens, warm browns, golden yellows
+*/
+
+@layer base {
+  :root {
+    /* Warm cream background - like fresh milk */
+    --background: 40 40% 97%;
+    --foreground: 25 30% 15%;
+
+    /* Card surfaces - warm paper tones */
+    --card: 40 30% 99%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 40 30% 99%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Primary - Fresh crop green */
+    --primary: 142 45% 35%;
+    --primary-foreground: 40 40% 98%;
+
+    /* Secondary - Warm terracotta soil */
+    --secondary: 25 55% 55%;
+    --secondary-foreground: 40 40% 98%;
+
+    /* Muted - Soft sage */
+    --muted: 100 15% 90%;
+    --muted-foreground: 25 20% 40%;
+
+    /* Accent - Golden harvest */
+    --accent: 45 90% 50%;
+    --accent-foreground: 25 30% 15%;
+
+    /* Destructive - Warning red */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 40 40% 98%;
+
+    --border: 40 25% 85%;
+    --input: 40 25% 88%;
+    --ring: 142 45% 35%;
+
+    --radius: 1rem;
+
+    /* Custom tokens for farmer app */
+    --earth: 25 55% 35%;
+    --leaf: 142 45% 35%;
+    --wheat: 45 85% 55%;
+    --sky: 200 70% 55%;
+    --water: 195 75% 45%;
+    
+    /* Gradients */
+    --gradient-earth: linear-gradient(135deg, hsl(142 45% 35%), hsl(100 40% 30%));
+    --gradient-sunrise: linear-gradient(135deg, hsl(45 90% 60%), hsl(25 80% 55%));
+    --gradient-field: linear-gradient(180deg, hsl(200 70% 85%), hsl(100 40% 85%));
+
+    /* Sidebar */
+    --sidebar-background: 100 20% 95%;
+    --sidebar-foreground: 25 30% 25%;
+    --sidebar-primary: 142 45% 35%;
+    --sidebar-primary-foreground: 40 40% 98%;
+    --sidebar-accent: 100 15% 88%;
+    --sidebar-accent-foreground: 25 30% 20%;
+    --sidebar-border: 100 15% 85%;
+    --sidebar-ring: 142 45% 35%;
+  }
+
+  .dark {
+    --background: 25 25% 10%;
+    --foreground: 40 30% 92%;
+
+    --card: 25 20% 14%;
+    --card-foreground: 40 30% 92%;
+
+    --popover: 25 20% 14%;
+    --popover-foreground: 40 30% 92%;
+
+    --primary: 142 50% 45%;
+    --primary-foreground: 25 25% 10%;
+
+    --secondary: 25 40% 35%;
+    --secondary-foreground: 40 30% 92%;
+
+    --muted: 25 15% 20%;
+    --muted-foreground: 40 20% 65%;
+
+    --accent: 45 80% 50%;
+    --accent-foreground: 25 25% 10%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 40 30% 92%;
+
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 142 50% 45%;
+    
+    --sidebar-background: 25 20% 12%;
+    --sidebar-foreground: 40 30% 90%;
+    --sidebar-primary: 142 50% 45%;
+    --sidebar-primary-foreground: 25 25% 10%;
+    --sidebar-accent: 25 15% 18%;
+    --sidebar-accent-foreground: 40 30% 90%;
+    --sidebar-border: 25 15% 18%;
+    --sidebar-ring: 142 50% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Nunito', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', system-ui, sans-serif;
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .chat-bubble {
+    @apply rounded-2xl px-4 py-3 max-w-[85%] shadow-sm whitespace-pre-wrap;
+  }
+  
+  .chat-bubble-user {
+    @apply bg-primary text-primary-foreground rounded-br-md;
+  }
+  
+  .chat-bubble-ai {
+    @apply bg-card text-card-foreground rounded-bl-md border border-border;
+  }
+  
+  .btn-quick-action {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted text-muted-foreground 
+           hover:bg-primary hover:text-primary-foreground transition-all duration-200 
+           text-sm font-medium border border-border hover:border-primary;
+  }
+  
+  .input-chat {
+    @apply w-full rounded-2xl bg-card border-2 border-border px-4 py-3 
+           focus:border-primary focus:ring-2 focus:ring-primary/20 
+           transition-all duration-200 placeholder:text-muted-foreground;
+  }
+}
