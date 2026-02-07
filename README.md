@@ -27,3 +27,5 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
  
+This is a AI tool for framers with all audioable and all main features 
+i make this tool looking for an problem statement "crop planning and information"
